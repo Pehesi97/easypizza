@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Visualização de Motoqueiros
+{% endblock %}
+
+{% block content %}
+    <section class="row">
+        <h3 class="text-center">
+            Visualização de Motoqueiros
+        </h3>
+    </section>
+    <section class="row">
+        <section class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>RG</th>
+                        <th>CPF</th>
+                        <th>Salário Semanal</th>
+                        <th>Contagem de entregas</th>
+                        <th>Contratado em</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for motoqueiro in motoqueiros %}
+                        <tr>
+                            <td>{{motoqueiro.name}}</td>
+                            <td>{{motoqueiro.rg}}</td>
+                            <td>{{motoqueiro.cpf}}</td>
+                            <td>{{motoqueiro.salary}}</td>
+                            <td>{{motoqueiro.service_count}}</td>
+                            <td>{{motoqueiro.hired_at}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>            
+        </section>
+    </section>
+{% endblock %}

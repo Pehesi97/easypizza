@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Visualização de Clientes
+{% endblock %}
+
+{% block content %}
+    <section class="row">
+        <h3 class="text-center">
+            Visualização de Clientes
+        </h3>
+    </section>
+    <section class="row">
+        <section class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Endereço</th>
+                        <th>Contagem de pedidos</th>
+                        <th>Data de Cadastro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cliente in clientes %}
+                        <tr>
+                            <td>{{cliente.name}}</td>
+                            <td>{{cliente.tel}}</td>
+                            <td>{{cliente.address}}</td>
+                            <td>{{cliente.call_count}}</td>
+                            <td>{{cliente.created_at}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>            
+        </section>
+    </section>
+{% endblock %}

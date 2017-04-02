@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Visualização de Atendentes
+{% endblock %}
+
+{% block content %}
+    <section class="row">
+        <h3 class="text-center">
+            Visualização de Atendentes
+        </h3>
+    </section>
+    <section class="row">
+        <section class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>RG</th>
+                        <th>CPF</th>
+                        <th>Salário Semanal</th>
+                        <th>Contagem de atendimentos</th>
+                        <th>Contratado em</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for atendente in atendentes %}
+                        <tr>
+                            <td>{{atendente.name}}</td>
+                            <td>{{atendente.rg}}</td>
+                            <td>{{atendente.cpf}}</td>
+                            <td>{{atendente.salary}}</td>
+                            <td>{{atendente.service_count}}</td>
+                            <td>{{atendente.hired_at}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>            
+        </section>
+    </section>
+{% endblock %}
