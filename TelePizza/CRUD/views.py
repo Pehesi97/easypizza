@@ -12,6 +12,12 @@ def clientes(request):
     clientes = Cliente.objects.all()
     return render(request, 'clientes.html', {'clientes' : clientes, 'activeTab' : activeTab})
 
+def cliente_detalhes(request, cliente_id):
+    activeTab = 'clientes'
+    cliente = Cliente.objects.get(id=cliente_id)
+    produtos = cliente.preference.products.all()
+    return render(request, 'cliente_detalhes.html', {'cliente' : cliente, 'activeTab' : activeTab, 'produtos' : produtos})
+
 def atendentes(request):
     activeTab = 'atendentes'
     atendentes = Atendente.objects.all()

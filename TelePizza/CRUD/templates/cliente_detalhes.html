@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Página de {{cliente.name}}
+{% endblock %}
+
+{% block content %}
+    <section class="row">
+        <h3 class="text-center">
+            Página de {{cliente.name}}
+        </h3>
+    </section>
+    <section class="row">
+        <section class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Endereço</th>
+                        <th>Contagem de pedidos</th>
+                        <th>Preferência de pedido</th>                        
+                    </tr>
+                </thead>
+                <tbody>                    
+                    <tr>
+                        <td>{{cliente.id}}</td>
+                        <td>{{cliente.name}}</td>
+                        <td>{{cliente.tel}}</td>
+                        <td>{{cliente.address}}</td>
+                        <td>{{cliente.call_count}}</td>
+                        <td>
+                            {% for produto in produtos %} 
+                                {{produto.description}} {% if not forloop.last %}+{% endif %}
+                            {% endfor %}
+                        </td>
+                    </tr>            
+                </tbody>
+            </table>            
+        </section>
+    </section>
+{% endblock %}
