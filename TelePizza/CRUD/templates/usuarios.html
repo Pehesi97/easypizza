@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Visualização de Atendentes
+    Visualização de Usuários
 {% endblock %}
 
 {% block content %}
     <section class="row">
         <h3 class="text-center">
-            Visualização de Atendentes
+            Visualização de Usuários
         </h3>
     </section>
     <section class="row">
@@ -18,20 +18,22 @@
                         <th>Nome</th>
                         <th>RG</th>
                         <th>CPF</th>
+                        <th>Tipo de Usuário</th>
                         <th>Salário Semanal</th>
                         <th>Contagem de atendimentos</th>
                         <th>Contratado em</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for atendente in atendentes %}
+                    {% for usuario in usuarios %}
                         <tr>
-                            <td>{{atendente.name}}</td>
-                            <td>{{atendente.rg}}</td>
-                            <td>{{atendente.cpf}}</td>
-                            <td>{{atendente.salary}}</td>
-                            <td>{{atendente.service_count}}</td>
-                            <td>{{atendente.hired_at}}</td>
+                            <td>{{usuario.name}}</td>
+                            <td>{{usuario.rg}}</td>
+                            <td>{{usuario.cpf}}</td>
+                            <td>{{usuario.type}}</td>
+                            <td>{{usuario.salary}}</td>
+                            <td>{{usuario.service_count}}</td>
+                            <td>{{usuario.hired_at}}</td>                            
                         </tr>
                     {% endfor %}
                 </tbody>

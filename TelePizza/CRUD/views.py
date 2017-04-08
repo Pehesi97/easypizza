@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
-from CRUD.models import Produto, Cliente, Atendente, Motoqueiro, Pedido
+from CRUD.models import Produto, Cliente, Usuario, Motoqueiro, Pedido, Telefone
 
 # Create your views here.
 def index(request):
@@ -10,18 +10,25 @@ def index(request):
 def clientes(request):
     activeTab = 'clientes'
     clientes = Cliente.objects.all()
-    return render(request, 'clientes.html', {'clientes' : clientes, 'activeTab' : activeTab})
+    telefones = Telefone.objects.all()
+    return render(request, 'clientes.html', {'clientes' : clientes, 'activeTab' : activeTab, 'telefones' : telefones})
 
 def cliente_detalhes(request, cliente_id):
     activeTab = 'clientes'
     cliente = Cliente.objects.get(id=cliente_id)
     produtos = cliente.preference.products.all()
-    return render(request, 'cliente_detalhes.html', {'cliente' : cliente, 'activeTab' : activeTab, 'produtos' : produtos})
+    telefones = Telefone.objects.get(cliente_id=cliente.id)
+    return render(request, 'cliente_detalhes.html', {'cliente' : cliente, 'activeTab' : activeTab, 'produtos' : produtos, 'telefones' : telefones})
 
-def atendentes(request):
-    activeTab = 'atendentes'
-    atendentes = Atendente.objects.all()
-    return render(request, 'atendentes.html', {'atendentes' : atendentes, 'activeTab' : activeTab})
+def usuarios(request):
+    activeTab = 'usuarios'
+    usuarios = Usuario.objects.all()
+    for usuario in usuarios:
+        if usuario.type == 0:
+            usuario.type = 'Atendente'
+        else:
+            usuario.type = 'Departamento de Vendas'
+    return render(request, 'usuarios.html', {'usuarios' : usuarios, 'activeTab' : activeTab})
 
 def motoqueiros(request):
     activeTab = 'motoqueiros'

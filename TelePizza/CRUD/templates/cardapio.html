@@ -15,6 +15,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>Descrição</th>
                         <th>Preço</th>
                         <th>Tipo</th>
@@ -23,6 +24,7 @@
                 <tbody>
                     {% for produto in produtos %}
                         <tr>
+                            <td>{{produto.id}}</td>
                             <td>{{produto.description}}</td>
                             <td>{{produto.price}}</td>
                             <td>{{produto.type}}</td>

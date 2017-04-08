@@ -22,12 +22,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{% url 'CRUD:index' %}">TelePizza ES</a>
+                <a class="navbar-brand" href="{% url 'CRUD:index' %}">EasyPizza</a>
             </section>
             <section id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li {% if activeTab == 'clientes' %}class="active"{% endif %}><a href="{% url 'CRUD:clientes' %}">Clientes</a></li>
-                    <li {% if activeTab == 'atendentes' %}class="active"{% endif %}><a href="{% url 'CRUD:atendentes' %}">Atendentes</a></li>
+                    <li {% if activeTab == 'usuarios' %}class="active"{% endif %}><a href="{% url 'CRUD:usuarios' %}">Usuários</a></li>
                     <li {% if activeTab == 'motoqueiros' %}class="active"{% endif %}><a href="{% url 'CRUD:motoqueiros' %}">Motoqueiros</a></li>
                     <li {% if activeTab == 'cardapio' %}class="active"{% endif %}><a href="{% url 'CRUD:cardapio' %}">Cardápio</a></li>
                     <li {% if activeTab == 'pedidos' %}class="active"{% endif %}><a href="{% url 'CRUD:pedidos' %}">Pedidos</a></li>

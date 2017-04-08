@@ -16,7 +16,7 @@
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Telefone</th>
+                        <th>Telefones</th>
                         <th>Endereço</th>
                         <th>Contagem de pedidos</th>
                         <th>Data de Cadastro</th>
@@ -26,7 +26,13 @@
                     {% for cliente in clientes %}
                         <tr>
                             <td>{{cliente.name}}</td>
-                            <td>{{cliente.tel}}</td>
+                            <td>
+                                {% for telefone in telefones %}
+                                    {% if telefone.cliente_id == cliente.id %}
+                                        {{telefone.tel}}
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
                             <td>{{cliente.address}}</td>
                             <td>{{cliente.call_count}}</td>
                             <td>{{cliente.created_at}}</td>
