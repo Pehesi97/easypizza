@@ -1,5 +1,5 @@
 # Easy Pizza
-Este readme serve para a instalação do ambiente de visualização de persistência do EasyPizza, criado pelo grupo [Felipe Freitas, Guilherme Medeiros, Luan Tafarel, Lucas Viana, Pedro Henrique, Vitor Balbo e Túlio Mitre].
+Este readme serve para a instalação do ambiente de visualização de persistência do EasyPizza, criado pelo grupo [Felipe Freitas, Guilherme Medeiros, Luan Tafarel, Lucas Viana, Pedro Henrique, Túlio Mitre e Vitor Balbo].
 
 # Requerimentos
 * Python 3 instalado na máquina;
