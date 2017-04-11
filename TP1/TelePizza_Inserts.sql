@@ -9,10 +9,8 @@ insert into CRUD_produto(id, description, price, type) values(3, 'Coca-Cola 2L'
 insert into CRUD_produto(id, description, price, type) values(4, 'Guaraná Jesus 2L'
 	, 7.50, 1);
 
-insert into CRUD_cliente(id, name, address, call_count, created_at, updated_at, preference_id) values(1, 'Pedro Henrique'
-	, 'Rua Rio Grande, 520 - Centro', 1, now(), now(), null);
-insert into CRUD_cliente(id, name, address, call_count, created_at, updated_at, preference_id) values(2, 'Cláudia Ribeiro'
-	, 'Avenida Continente, 1200 - Alto da Siriema', 1, now(), now(), null);
+insert into CRUD_cliente(id, name, address, call_count, created_at, updated_at, preference_id, password) values(1, 'Pedro Henrique', 'Rua Rio Grande, 520 - Centro', 1, now(), now(), null, '6C565134008CB92C9CCF6B2CB1ED0522BEC9E4D46A9E08CEDD36CA0C224362DD2E58E7172B3492ACE3E1F6F3945D5B7E1924E56BCC34C6933449DE3DAC217F5E');
+insert into CRUD_cliente(id, name, address, call_count, created_at, updated_at, preference_id, password) values(2, 'Cláudia Ribeiro', 'Avenida Continente, 1200 - Alto da Siriema', 1, now(), now(), null, '89583B9AF8A28CDB88E72434CFBA321F8CBDB51E687BF87BEFB33E6550CF19ABF46A3BD9DA3461D74CD82922C318FDC9712CABE093B751FE7F64800245DACDF2');
 
 insert into CRUD_telefone(id, cliente_id, tel) values(1, 1, '31993811533');
 insert into CRUD_telefone(id, cliente_id, tel) values(2, 2, '31999999999');

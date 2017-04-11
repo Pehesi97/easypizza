@@ -47,6 +47,7 @@ class Usuario(models.Model):
 
     hired_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    password = models.CharField(max_length=128)
 
 class Pedido(models.Model):    
     status = models.IntegerField()
